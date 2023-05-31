@@ -11,7 +11,7 @@ interface Menu
     public function get(): Collection;
 
     public static function route(
-        string $name, string $title, array $attribute = [], array $param = [],
+        string $name, string $title, array $attribute = [], Closure|array $param = [],
         ?string $activeRoute = null, ?array $activeRouteParam = null,
         Closure|bool $resolver = true
     ): static;

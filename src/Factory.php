@@ -60,19 +60,19 @@ class Factory implements \Koffin\Menu\Contracts\Menu
     }
 
     /**
-     * @param  string  $name
-     * @param  string  $title
-     * @param  array  $attribute
-     * @param  array  $param
-     * @param  string|null  $activeRoute
-     * @param  array|null  $activeRouteParam
-     * @param  \Closure|bool  $resolver
-     * @param  bool  $hasChild
+     * @param string $name
+     * @param string $title
+     * @param array $attribute
+     * @param Closure|array $param
+     * @param string|null $activeRoute
+     * @param array|null $activeRouteParam
+     * @param \Closure|bool $resolver
+     * @param bool $hasChild
      * @return static
      */
     public static function route(
         string $name, string $title,
-        array $attribute = [], array $param = [],
+        array $attribute = [], Closure|array $param = [],
         ?string $activeRoute = null, ?array $activeRouteParam = null,
         Closure|bool $resolver = true, bool $hasChild = false
     ): static {
@@ -130,7 +130,7 @@ class Factory implements \Koffin\Menu\Contracts\Menu
      */
     public static function add(
         MenuType $type, string $name, string $title,
-        array $attribute = [], array $param = [],
+        array $attribute = [], Closure|array $param = [],
         ?string $activeRoute = null, ?array $activeRouteParam = null,
         Closure|bool $resolver = true
     ): static {
